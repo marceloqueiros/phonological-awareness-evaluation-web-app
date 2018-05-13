@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "Prova fonológica";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<br />
+<h1 style="margin-left:60px">Cartão 13</h1>
+<br />
+
+@if (TempData["MsgErro"] != null)
+{
+    <div class="col-md-12">
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+            <h4><i class="icon fa fa-check"></i> Erro!</h4>
+            @TempData["MsgErro"].ToString()
+        </div>
+    </div>
+}
+
+
+<div class="row">
+    @using (@Html.BeginForm())
+    {
+        <div class="col-md-12" style="text-align:center">
+            <ul id="ul">
+                <li id="li">
+                    <input type="checkbox" id="cb1" name="val1" />
+                    <label id="label" for="cb1"><img src="/Imagens/CSI/Teste/13/1.png" /></label>
+                </li>
+                <li id="li">
+                    <input type="checkbox" id="cb2" name="val2" />
+                    <label id="label" for="cb2"><img src="/Imagens/CSI/Teste/13/2.png" /></label>
+                </li>
+                <li id="li">
+                    <input type="checkbox" id="cb3" name="val3" />
+                    <label id="label" for="cb3"><img src="/Imagens/CSI/Teste/13/3.png" /></label>
+                </li>
+                <li id="li">
+                    <input type="checkbox" id="cb4" name="val4" />
+                    <label id="label" for="cb4"><img src="/Imagens/CSI/Teste/13/4.png" /></label>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-12" style="text-align:center;margin-top:60px"><input type="submit" value="Próximo" class="btn btn-xlarge btn-primary"></div>
+    }
+
+</div>
+

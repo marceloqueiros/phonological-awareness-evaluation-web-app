@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Database1" Class="DataClassesDBIPCDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database1.mdf;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="Database1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Utilizador" Member="Utilizadors">
+    <Type Name="Utilizador">
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="palavra_chave" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="tefelone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codigoPostal" Type="System.String" DbType="Char(8)" CanBeNull="true" />
+      <Column Name="RoleName" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="token" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="dataNascimento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="morada" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="localidade" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="dataCriacao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ultimoLogin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Utilizador_Teste" Member="Testes" ThisKey="id_user" OtherKey="id_user" Type="Teste" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Paciente" Member="Pacientes">
+    <Type Name="Paciente">
+      <Column Name="id_paciente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nome" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="nomeTutor" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="telefone" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="data_de_nascimento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="Paciente_Teste" Member="Testes" ThisKey="id_paciente" OtherKey="id_paciente" Type="Teste" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Teste" Member="Testes">
+    <Type Name="Teste">
+      <Column Name="id_teste" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="id_paciente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="id_user" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="dataCriacao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="dataAcabado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TesteCSI1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI4" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI5" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI6" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI7" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI8" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI9" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI10" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI11" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI12" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI13" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCSI14" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCSI14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI4" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI5" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI6" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI7" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI8" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI9" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI10" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI11" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI12" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI13" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteCFI14" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoCFI14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI4" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI5" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI6" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI7" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI8" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI9" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI10" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI11" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI12" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI13" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI14" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI15" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI15" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI16" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI16" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI17" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI17" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI18" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI18" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI19" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI19" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI20" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI20" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI21" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI21" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI22" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI22" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI23" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI23" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSFI24" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSFI24" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI4" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI5" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI6" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI7" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI8" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI9" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI10" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI11" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI12" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI13" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteSSI14" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoSSI14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS4" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS5" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS6" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS7" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS8" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS9" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS10" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS11" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS12" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS13" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAS14" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAS14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF1" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF2" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF3" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF4" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF4" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF5" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF5" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF6" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF6" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF7" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF7" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF8" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF8" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF9" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF9" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF10" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF10" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF11" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF11" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF12" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF12" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF13" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF13" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TesteAF14" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TempoAF14" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TempoTotal" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Paciente_Teste" Member="Paciente" ThisKey="id_paciente" OtherKey="id_paciente" Type="Paciente" IsForeignKey="true" />
+      <Association Name="Utilizador_Teste" Member="Utilizador" ThisKey="id_user" OtherKey="id_user" Type="Utilizador" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

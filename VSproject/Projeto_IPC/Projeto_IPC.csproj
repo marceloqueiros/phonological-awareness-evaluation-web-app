@@ -1,0 +1,848 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{94C9CD6E-D5DC-4FDA-86D1-ABBC9ADDE594}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Projeto_IPC</RootNamespace>
+    <AssemblyName>Projeto_IPC</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\Database1.mdf" />
+    <Content Include="App_Data\Database1_log.ldf">
+      <DependentUpon>Database1.mdf</DependentUpon>
+    </Content>
+    <Content Include="contactform\readme.txt" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="CSS\StyleSheetCheckbox.css" />
+    <Content Include="CSS\StyleSheetComeco.css" />
+    <Content Include="CSS\StyleSheetCSIF.css" />
+    <Content Include="CSS\StyleSheetSplash.css" />
+    <Content Include="dist\css\AdminLTE.css" />
+    <Content Include="dist\css\AdminLTE.min.css" />
+    <Content Include="dist\css\alt\AdminLTE-bootstrap-social.css" />
+    <Content Include="dist\css\alt\AdminLTE-bootstrap-social.min.css" />
+    <Content Include="dist\css\alt\AdminLTE-fullcalendar.css" />
+    <Content Include="dist\css\alt\AdminLTE-fullcalendar.min.css" />
+    <Content Include="dist\css\alt\AdminLTE-select2.css" />
+    <Content Include="dist\css\alt\AdminLTE-select2.min.css" />
+    <Content Include="dist\css\alt\AdminLTE-without-plugins.css" />
+    <Content Include="dist\css\alt\AdminLTE-without-plugins.min.css" />
+    <Content Include="dist\css\skins\skin-black-light.css" />
+    <Content Include="dist\css\skins\skin-black-light.min.css" />
+    <Content Include="dist\css\skins\skin-black.css" />
+    <Content Include="dist\css\skins\skin-black.min.css" />
+    <Content Include="dist\css\skins\skin-blue-light.css" />
+    <Content Include="dist\css\skins\skin-blue-light.min.css" />
+    <Content Include="dist\css\skins\skin-blue.css" />
+    <Content Include="dist\css\skins\skin-blue.min.css" />
+    <Content Include="dist\css\skins\skin-green-light.css" />
+    <Content Include="dist\css\skins\skin-green-light.min.css" />
+    <Content Include="dist\css\skins\skin-green.css" />
+    <Content Include="dist\css\skins\skin-green.min.css" />
+    <Content Include="dist\css\skins\skin-purple-light.css" />
+    <Content Include="dist\css\skins\skin-purple-light.min.css" />
+    <Content Include="dist\css\skins\skin-purple.css" />
+    <Content Include="dist\css\skins\skin-purple.min.css" />
+    <Content Include="dist\css\skins\skin-red-light.css" />
+    <Content Include="dist\css\skins\skin-red-light.min.css" />
+    <Content Include="dist\css\skins\skin-red.css" />
+    <Content Include="dist\css\skins\skin-red.min.css" />
+    <Content Include="dist\css\skins\skin-yellow-light.css" />
+    <Content Include="dist\css\skins\skin-yellow-light.min.css" />
+    <Content Include="dist\css\skins\skin-yellow.css" />
+    <Content Include="dist\css\skins\skin-yellow.min.css" />
+    <Content Include="dist\css\skins\_all-skins.css" />
+    <Content Include="dist\css\skins\_all-skins.min.css" />
+    <Content Include="dist\css\style.css" />
+    <Content Include="dist\img\avatar.png" />
+    <Content Include="dist\img\avatar04.png" />
+    <Content Include="dist\img\avatar2.png" />
+    <Content Include="dist\img\avatar3.png" />
+    <Content Include="dist\img\avatar5.png" />
+    <Content Include="dist\img\boxed-bg.jpg" />
+    <Content Include="dist\img\boxed-bg.png" />
+    <Content Include="dist\img\credit\american-express.png" />
+    <Content Include="dist\img\credit\cirrus.png" />
+    <Content Include="dist\img\credit\mastercard.png" />
+    <Content Include="dist\img\credit\mestro.png" />
+    <Content Include="dist\img\credit\paypal.png" />
+    <Content Include="dist\img\credit\paypal2.png" />
+    <Content Include="dist\img\credit\visa.png" />
+    <Content Include="dist\img\default-50x50.gif" />
+    <Content Include="dist\img\icons.png" />
+    <Content Include="dist\img\photo1.png" />
+    <Content Include="dist\img\photo2.png" />
+    <Content Include="dist\img\photo3.jpg" />
+    <Content Include="dist\img\photo4.jpg" />
+    <Content Include="dist\img\user1-128x128.jpg" />
+    <Content Include="dist\img\user2-160x160.jpg" />
+    <Content Include="dist\img\user3-128x128.jpg" />
+    <Content Include="dist\img\user4-128x128.jpg" />
+    <Content Include="dist\img\user5-128x128.jpg" />
+    <Content Include="dist\img\user6-128x128.jpg" />
+    <Content Include="dist\img\user7-128x128.jpg" />
+    <Content Include="dist\img\user8-128x128.jpg" />
+    <Content Include="dist\js\app.js" />
+    <Content Include="dist\js\app.min.js" />
+    <Content Include="dist\js\demo.js" />
+    <Content Include="dist\js\pages\dashboard.js" />
+    <Content Include="dist\js\pages\dashboard2.js" />
+    <Content Include="dist\js\scripts.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Imagens\AF\Exemplos\1\1.png" />
+    <Content Include="Imagens\AF\Exemplos\2\2.png" />
+    <Content Include="Imagens\AF\Teste\10\10.png" />
+    <Content Include="Imagens\AF\Teste\11\11.png" />
+    <Content Include="Imagens\AF\Teste\12\12.png" />
+    <Content Include="Imagens\AF\Teste\13\13.png" />
+    <Content Include="Imagens\AF\Teste\14\14.png" />
+    <Content Include="Imagens\AF\Teste\1\1.png" />
+    <Content Include="Imagens\AF\Teste\2\2.png" />
+    <Content Include="Imagens\AF\Teste\3\3.png" />
+    <Content Include="Imagens\AF\Teste\4\4.png" />
+    <Content Include="Imagens\AF\Teste\5\5.png" />
+    <Content Include="Imagens\AF\Teste\6\6.png" />
+    <Content Include="Imagens\AF\Teste\7\7.png" />
+    <Content Include="Imagens\AF\Teste\8\8.png" />
+    <Content Include="Imagens\AF\Teste\9\9.png" />
+    <Content Include="Imagens\AS\Exemplos\1\1.png" />
+    <Content Include="Imagens\AS\Exemplos\2\2.png" />
+    <Content Include="Imagens\AS\Teste\10\10.png" />
+    <Content Include="Imagens\AS\Teste\11\11.png" />
+    <Content Include="Imagens\AS\Teste\12\12.png" />
+    <Content Include="Imagens\AS\Teste\13\13.png" />
+    <Content Include="Imagens\AS\Teste\14\14.png" />
+    <Content Include="Imagens\AS\Teste\1\1.png" />
+    <Content Include="Imagens\AS\Teste\2\2.png" />
+    <Content Include="Imagens\AS\Teste\3\3.png" />
+    <Content Include="Imagens\AS\Teste\4\4.png" />
+    <Content Include="Imagens\AS\Teste\5\5.png" />
+    <Content Include="Imagens\AS\Teste\6\6.png" />
+    <Content Include="Imagens\AS\Teste\7\7.png" />
+    <Content Include="Imagens\AS\Teste\8\8.png" />
+    <Content Include="Imagens\AS\Teste\9\9.png" />
+    <Content Include="Imagens\CFI\Exemplos\1\1.png" />
+    <Content Include="Imagens\CFI\Exemplos\1\2.png" />
+    <Content Include="Imagens\CFI\Exemplos\1\3.png" />
+    <Content Include="Imagens\CFI\Exemplos\1\4.png" />
+    <Content Include="Imagens\CFI\Exemplos\2\1.png" />
+    <Content Include="Imagens\CFI\Exemplos\2\2.png" />
+    <Content Include="Imagens\CFI\Exemplos\2\3.png" />
+    <Content Include="Imagens\CFI\Exemplos\2\4.png" />
+    <Content Include="Imagens\CFI\Teste\10\1.png" />
+    <Content Include="Imagens\CFI\Teste\10\2.png" />
+    <Content Include="Imagens\CFI\Teste\10\3.png" />
+    <Content Include="Imagens\CFI\Teste\10\4.png" />
+    <Content Include="Imagens\CFI\Teste\11\1.png" />
+    <Content Include="Imagens\CFI\Teste\11\2.png" />
+    <Content Include="Imagens\CFI\Teste\11\3.png" />
+    <Content Include="Imagens\CFI\Teste\11\4.png" />
+    <Content Include="Imagens\CFI\Teste\12\1.png" />
+    <Content Include="Imagens\CFI\Teste\12\2.png" />
+    <Content Include="Imagens\CFI\Teste\12\3.png" />
+    <Content Include="Imagens\CFI\Teste\12\4.png" />
+    <Content Include="Imagens\CFI\Teste\13\1.png" />
+    <Content Include="Imagens\CFI\Teste\13\2.png" />
+    <Content Include="Imagens\CFI\Teste\13\3.png" />
+    <Content Include="Imagens\CFI\Teste\13\4.png" />
+    <Content Include="Imagens\CFI\Teste\14\1.png" />
+    <Content Include="Imagens\CFI\Teste\14\2.png" />
+    <Content Include="Imagens\CFI\Teste\14\3.png" />
+    <Content Include="Imagens\CFI\Teste\14\4.png" />
+    <Content Include="Imagens\CFI\Teste\1\1.png" />
+    <Content Include="Imagens\CFI\Teste\1\2.png" />
+    <Content Include="Imagens\CFI\Teste\1\3.png" />
+    <Content Include="Imagens\CFI\Teste\1\4.png" />
+    <Content Include="Imagens\CFI\Teste\2\1.png" />
+    <Content Include="Imagens\CFI\Teste\2\2.png" />
+    <Content Include="Imagens\CFI\Teste\2\3.png" />
+    <Content Include="Imagens\CFI\Teste\2\4.png" />
+    <Content Include="Imagens\CFI\Teste\3\1.png" />
+    <Content Include="Imagens\CFI\Teste\3\2.png" />
+    <Content Include="Imagens\CFI\Teste\3\3.png" />
+    <Content Include="Imagens\CFI\Teste\3\4.png" />
+    <Content Include="Imagens\CFI\Teste\4\1.png" />
+    <Content Include="Imagens\CFI\Teste\4\2.png" />
+    <Content Include="Imagens\CFI\Teste\4\3.png" />
+    <Content Include="Imagens\CFI\Teste\4\4.png" />
+    <Content Include="Imagens\CFI\Teste\5\1.png" />
+    <Content Include="Imagens\CFI\Teste\5\2.png" />
+    <Content Include="Imagens\CFI\Teste\5\3.png" />
+    <Content Include="Imagens\CFI\Teste\5\4.png" />
+    <Content Include="Imagens\CFI\Teste\6\1.png" />
+    <Content Include="Imagens\CFI\Teste\6\2.png" />
+    <Content Include="Imagens\CFI\Teste\6\3.png" />
+    <Content Include="Imagens\CFI\Teste\6\4.png" />
+    <Content Include="Imagens\CFI\Teste\7\1.png" />
+    <Content Include="Imagens\CFI\Teste\7\2.png" />
+    <Content Include="Imagens\CFI\Teste\7\3.png" />
+    <Content Include="Imagens\CFI\Teste\7\4.png" />
+    <Content Include="Imagens\CFI\Teste\8\1.png" />
+    <Content Include="Imagens\CFI\Teste\8\2.png" />
+    <Content Include="Imagens\CFI\Teste\8\3.png" />
+    <Content Include="Imagens\CFI\Teste\8\4.png" />
+    <Content Include="Imagens\CFI\Teste\9\1.png" />
+    <Content Include="Imagens\CFI\Teste\9\2.png" />
+    <Content Include="Imagens\CFI\Teste\9\3.png" />
+    <Content Include="Imagens\CFI\Teste\9\4.png" />
+    <Content Include="Imagens\CSI\Exemplos\1\1.png" />
+    <Content Include="Imagens\CSI\Exemplos\1\2.png" />
+    <Content Include="Imagens\CSI\Exemplos\1\3.png" />
+    <Content Include="Imagens\CSI\Exemplos\1\4.png" />
+    <Content Include="Imagens\CSI\Exemplos\2\1.png" />
+    <Content Include="Imagens\CSI\Exemplos\2\2.png" />
+    <Content Include="Imagens\CSI\Exemplos\2\3.png" />
+    <Content Include="Imagens\CSI\Exemplos\2\4.png" />
+    <Content Include="Imagens\CSI\Teste\10\1.png" />
+    <Content Include="Imagens\CSI\Teste\10\2.png" />
+    <Content Include="Imagens\CSI\Teste\10\3.png" />
+    <Content Include="Imagens\CSI\Teste\10\4.png" />
+    <Content Include="Imagens\CSI\Teste\11\1.png" />
+    <Content Include="Imagens\CSI\Teste\11\2.png" />
+    <Content Include="Imagens\CSI\Teste\11\3.png" />
+    <Content Include="Imagens\CSI\Teste\11\4.png" />
+    <Content Include="Imagens\CSI\Teste\12\1.png" />
+    <Content Include="Imagens\CSI\Teste\12\2.png" />
+    <Content Include="Imagens\CSI\Teste\12\3.png" />
+    <Content Include="Imagens\CSI\Teste\12\4.png" />
+    <Content Include="Imagens\CSI\Teste\13\1.png" />
+    <Content Include="Imagens\CSI\Teste\13\2.png" />
+    <Content Include="Imagens\CSI\Teste\13\3.png" />
+    <Content Include="Imagens\CSI\Teste\13\4.png" />
+    <Content Include="Imagens\CSI\Teste\14\1.png" />
+    <Content Include="Imagens\CSI\Teste\14\2.png" />
+    <Content Include="Imagens\CSI\Teste\14\3.png" />
+    <Content Include="Imagens\CSI\Teste\14\4.png" />
+    <Content Include="Imagens\CSI\Teste\1\1.png" />
+    <Content Include="Imagens\CSI\Teste\1\2.png" />
+    <Content Include="Imagens\CSI\Teste\1\3.png" />
+    <Content Include="Imagens\CSI\Teste\1\4.png" />
+    <Content Include="Imagens\CSI\Teste\2\1.png" />
+    <Content Include="Imagens\CSI\Teste\2\2.png" />
+    <Content Include="Imagens\CSI\Teste\2\3.png" />
+    <Content Include="Imagens\CSI\Teste\2\4.png" />
+    <Content Include="Imagens\CSI\Teste\3\1.png" />
+    <Content Include="Imagens\CSI\Teste\3\2.png" />
+    <Content Include="Imagens\CSI\Teste\3\3.png" />
+    <Content Include="Imagens\CSI\Teste\3\4.png" />
+    <Content Include="Imagens\CSI\Teste\4\1.png" />
+    <Content Include="Imagens\CSI\Teste\4\2.png" />
+    <Content Include="Imagens\CSI\Teste\4\3.png" />
+    <Content Include="Imagens\CSI\Teste\4\4.png" />
+    <Content Include="Imagens\CSI\Teste\5\1.png" />
+    <Content Include="Imagens\CSI\Teste\5\2.png" />
+    <Content Include="Imagens\CSI\Teste\5\3.png" />
+    <Content Include="Imagens\CSI\Teste\5\4.png" />
+    <Content Include="Imagens\CSI\Teste\6\1.png" />
+    <Content Include="Imagens\CSI\Teste\6\2.png" />
+    <Content Include="Imagens\CSI\Teste\6\3.png" />
+    <Content Include="Imagens\CSI\Teste\6\4.png" />
+    <Content Include="Imagens\CSI\Teste\7\1.png" />
+    <Content Include="Imagens\CSI\Teste\7\2.png" />
+    <Content Include="Imagens\CSI\Teste\7\3.png" />
+    <Content Include="Imagens\CSI\Teste\7\4.png" />
+    <Content Include="Imagens\CSI\Teste\8\1.png" />
+    <Content Include="Imagens\CSI\Teste\8\2.png" />
+    <Content Include="Imagens\CSI\Teste\8\3.png" />
+    <Content Include="Imagens\CSI\Teste\8\4.png" />
+    <Content Include="Imagens\CSI\Teste\9\1.png" />
+    <Content Include="Imagens\CSI\Teste\9\2.png" />
+    <Content Include="Imagens\CSI\Teste\9\3.png" />
+    <Content Include="Imagens\CSI\Teste\9\4.png" />
+    <Content Include="Imagens\SFI\Exemplos\1\1.png" />
+    <Content Include="Imagens\SFI\Exemplos\2\2.png" />
+    <Content Include="Imagens\SFI\Teste\10\10.png" />
+    <Content Include="Imagens\SFI\Teste\11\11.png" />
+    <Content Include="Imagens\SFI\Teste\12\12.png" />
+    <Content Include="Imagens\SFI\Teste\13\13.png" />
+    <Content Include="Imagens\SFI\Teste\14\14.png" />
+    <Content Include="Imagens\SFI\Teste\15\15.png" />
+    <Content Include="Imagens\SFI\Teste\16\16.png" />
+    <Content Include="Imagens\SFI\Teste\17\17.png" />
+    <Content Include="Imagens\SFI\Teste\18\18.png" />
+    <Content Include="Imagens\SFI\Teste\19\19.png" />
+    <Content Include="Imagens\SFI\Teste\1\1.png" />
+    <Content Include="Imagens\SFI\Teste\20\20.png" />
+    <Content Include="Imagens\SFI\Teste\21\21.png" />
+    <Content Include="Imagens\SFI\Teste\22\22.png" />
+    <Content Include="Imagens\SFI\Teste\23\23.png" />
+    <Content Include="Imagens\SFI\Teste\24\24.png" />
+    <Content Include="Imagens\SFI\Teste\2\2.png" />
+    <Content Include="Imagens\SFI\Teste\3\3.png" />
+    <Content Include="Imagens\SFI\Teste\4\4.png" />
+    <Content Include="Imagens\SFI\Teste\5\5.png" />
+    <Content Include="Imagens\SFI\Teste\6\6.png" />
+    <Content Include="Imagens\SFI\Teste\7\7.png" />
+    <Content Include="Imagens\SFI\Teste\8\8.png" />
+    <Content Include="Imagens\SFI\Teste\9\9.png" />
+    <Content Include="Imagens\SSI\Exemplos\1\1.png" />
+    <Content Include="Imagens\SSI\Exemplos\2\2.png" />
+    <Content Include="Imagens\SSI\Teste\10\10.png" />
+    <Content Include="Imagens\SSI\Teste\11\11.png" />
+    <Content Include="Imagens\SSI\Teste\12\12.png" />
+    <Content Include="Imagens\SSI\Teste\13\13.png" />
+    <Content Include="Imagens\SSI\Teste\14\14.png" />
+    <Content Include="Imagens\SSI\Teste\1\1.png" />
+    <Content Include="Imagens\SSI\Teste\2\2.png" />
+    <Content Include="Imagens\SSI\Teste\3\3.png" />
+    <Content Include="Imagens\SSI\Teste\4\4.png" />
+    <Content Include="Imagens\SSI\Teste\5\5.png" />
+    <Content Include="Imagens\SSI\Teste\6\6.png" />
+    <Content Include="Imagens\SSI\Teste\7\7.png" />
+    <Content Include="Imagens\SSI\Teste\8\8.png" />
+    <Content Include="Imagens\SSI\Teste\9\9.png" />
+    <Content Include="Imagens\WallPaper.jpg" />
+    <Content Include="Imagens\Wallpaper2.jpg" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <None Include="Properties\PublishProfiles\Projeto_IPC.pubxml" />
+    <None Include="Scripts\jquery-1.7-vsdoc.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\jquery-1.7.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InicioController.cs" />
+    <Compile Include="Controllers\PacienteController.cs" />
+    <Compile Include="Controllers\TesteController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DataClassesDBIPC.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataClassesDBIPC.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Funcionalidades.cs" />
+    <Compile Include="Models\TesteParaListar.cs" />
+    <Compile Include="Models\TestesEmPausa.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RolesClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Views\Shared\_LayoutPrincipal.cshtml" />
+    <Content Include="Views\Inicio\Registo.cshtml" />
+    <Content Include="Views\Inicio\Login.cshtml" />
+    <Content Include="Views\Inicio\AtivarConta.cshtml" />
+    <Content Include="Views\Teste\TesteCSI1.cshtml" />
+    <Content Include="Models\DataClassesDBIPC.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>DataClassesDBIPC.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\Paciente\NovoPaciente.cshtml" />
+    <Content Include="Views\Teste\ComecoTeste.cshtml" />
+    <Content Include="Views\Teste\ExemploCSI1.cshtml" />
+    <Content Include="Views\Teste\ExemploCSI2.cshtml" />
+    <Content Include="Views\Teste\CSI.cshtml" />
+    <Content Include="Views\Teste\CFI.cshtml" />
+    <Content Include="Views\Teste\TesteCSI3.cshtml" />
+    <Content Include="Views\Teste\TesteCSI2.cshtml" />
+    <Content Include="Views\Teste\TesteCSI4.cshtml" />
+    <Content Include="Views\Teste\TesteCSI5.cshtml" />
+    <Content Include="Views\Teste\TesteCSI6.cshtml" />
+    <Content Include="Views\Teste\TesteCSI7.cshtml" />
+    <Content Include="Views\Teste\TesteCSI8.cshtml" />
+    <Content Include="Views\Teste\TesteCSI9.cshtml" />
+    <Content Include="Views\Teste\TesteCSI10.cshtml" />
+    <Content Include="Views\Teste\TesteCSI11.cshtml" />
+    <Content Include="Views\Teste\TesteCSI12.cshtml" />
+    <Content Include="Views\Teste\TesteCSI13.cshtml" />
+    <Content Include="Views\Teste\TesteCSI14.cshtml" />
+    <Content Include="Views\Teste\SSI.cshtml" />
+    <Content Include="Views\Teste\ExemploCFI1.cshtml" />
+    <Content Include="Views\Teste\ExemploCFI2.cshtml" />
+    <Content Include="Views\Teste\TesteCFI1.cshtml" />
+    <Content Include="Views\Teste\TesteCFI2.cshtml" />
+    <Content Include="Views\Teste\TesteCFI3.cshtml" />
+    <Content Include="Views\Teste\TesteCFI4.cshtml" />
+    <Content Include="Views\Teste\TesteCFI5.cshtml" />
+    <Content Include="Views\Teste\TesteCFI6.cshtml" />
+    <Content Include="Views\Teste\TesteCFI7.cshtml" />
+    <Content Include="Views\Teste\TesteCFI8.cshtml" />
+    <Content Include="Views\Teste\TesteCFI9.cshtml" />
+    <Content Include="Views\Teste\TesteCFI10.cshtml" />
+    <Content Include="Views\Teste\TesteCFI11.cshtml" />
+    <Content Include="Views\Teste\TesteCFI12.cshtml" />
+    <Content Include="Views\Teste\TesteCFI13.cshtml" />
+    <Content Include="Views\Teste\TesteCFI14.cshtml" />
+    <Content Include="Views\Teste\ExemploSSI1.cshtml" />
+    <Content Include="Views\Teste\ExemploSSI2.cshtml" />
+    <Content Include="Views\Teste\SFI.cshtml" />
+    <Content Include="Views\Teste\TesteSSI1.cshtml" />
+    <Content Include="Views\Teste\TesteSSI2.cshtml" />
+    <Content Include="Views\Teste\TesteSSI3.cshtml" />
+    <Content Include="Views\Teste\TesteSSI4.cshtml" />
+    <Content Include="Views\Teste\TesteSSI5.cshtml" />
+    <Content Include="Views\Teste\TesteSSI6.cshtml" />
+    <Content Include="Views\Teste\TesteSSI7.cshtml" />
+    <Content Include="Views\Teste\TesteSSI8.cshtml" />
+    <Content Include="Views\Teste\TesteSSI9.cshtml" />
+    <Content Include="Views\Teste\TesteSSI10.cshtml" />
+    <Content Include="Views\Teste\TesteSSI11.cshtml" />
+    <Content Include="Views\Teste\TesteSSI12.cshtml" />
+    <Content Include="Views\Teste\TesteSSI13.cshtml" />
+    <Content Include="Views\Teste\TesteSSI14.cshtml" />
+    <Content Include="Views\Teste\AS.cshtml" />
+    <Content Include="Views\Teste\ExemploSFI1.cshtml" />
+    <Content Include="Views\Teste\ExemploSFI2.cshtml" />
+    <Content Include="Views\Teste\TesteSFI1.cshtml" />
+    <Content Include="Views\Teste\TesteSFI2.cshtml" />
+    <Content Include="Views\Teste\TesteSFI3.cshtml" />
+    <Content Include="Views\Teste\TesteSFI4.cshtml" />
+    <Content Include="Views\Teste\TesteSFI5.cshtml" />
+    <Content Include="Views\Teste\TesteSFI6.cshtml" />
+    <Content Include="Views\Teste\TesteSFI7.cshtml" />
+    <Content Include="Views\Teste\TesteSFI8.cshtml" />
+    <Content Include="Views\Teste\TesteSFI9.cshtml" />
+    <Content Include="Views\Teste\TesteSFI10.cshtml" />
+    <Content Include="Views\Teste\TesteSFI11.cshtml" />
+    <Content Include="Views\Teste\TesteSFI12.cshtml" />
+    <Content Include="Views\Teste\TesteSFI13.cshtml" />
+    <Content Include="Views\Teste\TesteSFI14.cshtml" />
+    <Content Include="Views\Teste\TesteSFI15.cshtml" />
+    <Content Include="Views\Teste\TesteSFI16.cshtml" />
+    <Content Include="Views\Teste\TesteSFI17.cshtml" />
+    <Content Include="Views\Teste\TesteSFI18.cshtml" />
+    <Content Include="Views\Teste\TesteSFI19.cshtml" />
+    <Content Include="Views\Teste\TesteSFI20.cshtml" />
+    <Content Include="Views\Teste\TesteSFI21.cshtml" />
+    <Content Include="Views\Teste\TesteSFI22.cshtml" />
+    <Content Include="Views\Teste\TesteSFI23.cshtml" />
+    <Content Include="Views\Teste\TesteSFI24.cshtml" />
+    <Content Include="Views\Teste\AF.cshtml" />
+    <Content Include="Views\Teste\ExemploAS1.cshtml" />
+    <Content Include="Views\Teste\ExemploAS2.cshtml" />
+    <Content Include="Views\Teste\TesteAS1.cshtml" />
+    <Content Include="Views\Teste\TesteAS2.cshtml" />
+    <Content Include="Views\Teste\TesteAS3.cshtml" />
+    <Content Include="Views\Teste\TesteAS4.cshtml" />
+    <Content Include="Views\Teste\TesteAS5.cshtml" />
+    <Content Include="Views\Teste\TesteAS6.cshtml" />
+    <Content Include="Views\Teste\TesteAS7.cshtml" />
+    <Content Include="Views\Teste\TesteAS8.cshtml" />
+    <Content Include="Views\Teste\TesteAS9.cshtml" />
+    <Content Include="Views\Teste\TesteAS10.cshtml" />
+    <Content Include="Views\Teste\TesteAS11.cshtml" />
+    <Content Include="Views\Teste\TesteAS12.cshtml" />
+    <Content Include="Views\Teste\TesteAS13.cshtml" />
+    <Content Include="Views\Teste\TesteAS14.cshtml" />
+    <Content Include="Views\Teste\Fim.cshtml" />
+    <Content Include="Views\Teste\ExemploAF1.cshtml" />
+    <Content Include="Views\Teste\ExemploAF2.cshtml" />
+    <Content Include="Views\Teste\TesteAF1.cshtml" />
+    <Content Include="Views\Teste\TesteAF2.cshtml" />
+    <Content Include="Views\Teste\TesteAF3.cshtml" />
+    <Content Include="Views\Teste\TesteAF4.cshtml" />
+    <Content Include="Views\Teste\TesteAF5.cshtml" />
+    <Content Include="Views\Teste\TesteAF6.cshtml" />
+    <Content Include="Views\Teste\TesteAF7.cshtml" />
+    <Content Include="Views\Teste\TesteAF8.cshtml" />
+    <Content Include="Views\Teste\TesteAF9.cshtml" />
+    <Content Include="Views\Teste\TesteAF10.cshtml" />
+    <Content Include="Views\Teste\TesteAF11.cshtml" />
+    <Content Include="Views\Teste\TesteAF12.cshtml" />
+    <Content Include="Views\Teste\TesteAF13.cshtml" />
+    <Content Include="Views\Teste\TesteAF14.cshtml" />
+    <Content Include="Views\Teste\ProvasRealizadas.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Teste\Detalhes.cshtml" />
+    <Content Include="Views\Shared\_LayoutInicial.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\SobreNos.cshtml" />
+    <Content Include="Views\Teste\ProvasPausadas.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Default\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Models\DataClassesDBIPC.dbml.layout">
+      <DependentUpon>DataClassesDBIPC.dbml</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52762</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:52762/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

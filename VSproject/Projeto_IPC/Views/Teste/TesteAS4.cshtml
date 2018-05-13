@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Prova fonológica";
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+
+<br />
+<h1 style="margin-left:60px">Cartão 4</h1>
+<br />
+
+<head>
+    <link href="~/CSS/StyleSheetCheckbox.css" rel="stylesheet" />
+</head>
+<div class="row">
+    @using (@Html.BeginForm())
+    {
+        <div class="col-md-12" style="text-align:center">
+            <ul id="ul">
+                <li id="li">
+                    <label id="label" for="cb1"><img style="text-align:center; height:400px; width:500px;" src="/Imagens/AS/Teste/4/4.png" /></label>
+                </li>
+
+            </ul>
+        </div>
+
+        <div class="col-md-12" style="text-align:center;margin-top:40px"><input type="submit" value="Próximo" class="btn btn-xlarge btn-primary"></div>
+
+        <label for="primary" class="btn btn-primary" style="position:absolute;bottom:120px;right:25px;">
+            Supressão da Sílaba Inicial
+            <input type="checkbox" id="primary" name="AcertouSSI" class="badgebox"><span class="badge">&check;</span>
+        </label>
+    }
+
+</div>
+

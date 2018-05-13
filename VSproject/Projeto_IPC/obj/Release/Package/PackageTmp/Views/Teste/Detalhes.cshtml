@@ -1,0 +1,1417 @@
+﻿@model Projeto_IPC.Models.Teste
+
+@{
+    ViewBag.Title = "Prova de " + Model.Paciente.nome;
+    Layout = "~/Views/Shared/_LayoutPrincipal.cshtml";
+}
+<div class="box box-primary">
+    <div class="box-header with-border">
+        <h3 class="box-title">Detalhes da prova</h3>
+    </div>
+
+    <div class="box-body" style="overflow: hidden; position: relative;">
+
+        <div >
+            <ol class="dl-horizontal" style="float: left;">
+
+                <dt>
+                    @Html.DisplayName("Técnico")
+                </dt>
+
+                <dd>
+                    @Model.Utilizador.nome
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Data de criação")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dataCriacao)
+                </dd>
+
+                <dt>
+                    @Html.DisplayName("Data de acabamento")
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.dataAcabado)
+                </dd>
+           
+                        </br>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI1)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI1 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI2)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI2 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI3)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI3 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI4)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI4 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI5)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI5 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI6)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI6 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI7)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI7 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI8)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI8 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI9)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI9 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI10)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI10 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI11)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI11 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI12)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI12 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI13)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI13 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCSI14)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCSI14 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+                    </ol>
+                </div>
+
+                <div>
+                    <ol class="dl-horizontal" style="float: left; ">
+
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI1)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI1 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI2)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI2 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI3)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI3 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI4)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI4 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI5)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI5 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI6)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI6 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI7)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI7 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI8)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI8 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI9)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI9 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI10)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI10 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI11)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI11 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI12)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI12 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI13)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI13 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteCFI14)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteCFI14 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                    </ol>
+                </div>
+                <div>
+                    <ol class="dl-horizontal" style="float: left;">
+
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI1)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI1 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI2)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI2 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI3)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI3 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI4)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI4 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI5)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI5 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI6)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI6 == true)
+            {
+                                <i class="fa fa-check"></i>}
+            else
+            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI7)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI7 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI8)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI8 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI9)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI9 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI10)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI10 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI11)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI11 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI12)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI12 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI13)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI13 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI14)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI14 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI15)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI15 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI16)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI16 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI17)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI17 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI18)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI18 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI19)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI19 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI20)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI20 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI21)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI21 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI22)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI22 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI23)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI23 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSFI24)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSFI24 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                    </ol>
+                </div>
+                <div>
+                    <ol class="dl-horizontal" style="float: left; ">
+
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI1)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI1 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI2)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI2 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI3)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI3 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI4)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI4 == true)
+            {
+                                <i class="fa fa-check"></i>}
+            else
+            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI5)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI5 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI6)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI6 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI7)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI7 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI8)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI8 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI9)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI9 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI10)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI10 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI11)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI11 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI12)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI12 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI13)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI13 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteSSI14)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteSSI14 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                    </ol>
+                </div>
+                <div>
+                    <ol class="dl-horizontal" style="float: left;">
+
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS1)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS1 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS2)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS2 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS3)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS3 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS4)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS4 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS5)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS5 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS6)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS6 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS7)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS7 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS8)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS8 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS9)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS9 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS10)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS10 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS11)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS11 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS12)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS12 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS13)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS13 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAS14)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAS14 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                    </ol>
+                </div>
+                <div>
+                    <ol class="dl-horizontal" style="float: left;">
+
+                        </br>
+                        </br>
+                        </br>
+                        </br>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF1)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF1 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF2)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF2 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF3)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF3 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF4)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF4 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF5)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF5 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF6)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF6 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF7)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF7 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF8)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF8 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF9)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF9 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF10)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF10 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF11)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF11 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF12)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF12 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF13)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF13 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                        <dt>
+                            @Html.DisplayNameFor(model => model.TesteAF14)
+                        </dt>
+
+                        <dd>
+                            @if (Model.TesteAF14 == true)
+                            {
+                                <i class="fa fa-check"></i>}
+                            else
+                            {
+                                <i class="fa fa-close"></i>
+                            }
+                        </dd>
+
+                    </ol>
+
+
+
+                </div>
+
+</div>
+    <!-- /.box-body -->
+</div>
